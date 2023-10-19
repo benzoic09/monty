@@ -38,6 +38,8 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 	{
 		pall(stack);
 	}
+	
+
 	else
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);

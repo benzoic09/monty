@@ -50,5 +50,4 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 void free_stack(stack_t *stack);
 void add(stack_t **head, unsigned int line_number);
 
-
 #endif
