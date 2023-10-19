@@ -48,6 +48,5 @@ void pall(stack_t **stack);
 int main(int argc, char *argv[]);
 int process_instruction(stack_t **stack, char *instruction, unsigned int line_number);
 void free_stack(stack_t *stack);
-void f_swap(stack_t **head, unsigned int line_number)
 
 #endif
