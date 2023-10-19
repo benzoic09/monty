@@ -21,5 +21,5 @@ int pall(stack_t **stack)
 		printf("%d\n", current->n);
 		current = current->next;
 	}
-	return (0);
+	return (1);
 }

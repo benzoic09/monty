@@ -46,6 +46,8 @@ void push(stack_t **stack, unsigned int line_number);
 int pop(stack_t **stack, unsigned int line_number);
 int pall(stack_t **stack);
 int main(int argc, char *argv[]);
+int process_instruction(stack_t **stack, char *instruction, unsigned int line_number);
+void free_stack(stack_t *stack);
 
 
 #endif
