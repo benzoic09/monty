@@ -23,7 +23,6 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 
 		value = atoi(argument);
 		push(stack, value);
-		f_swap(stack, line_number);
 	}
 
 	else if (strcmp(opcode, "pop") == 0)
@@ -39,6 +38,12 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 	{
 		pall(stack);
 	}
+	
+	else if (strcmp(opcode, "swap") == 0)
+	{
+		f_swap(stack, line_number);
+	}
+
 	else
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
