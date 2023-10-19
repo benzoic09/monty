@@ -1,25 +1,20 @@
+#include <stdio.h>
 #include "monty.h"
 
-
 /**
- * pall - Prints all the values on the stack.
- * @stack: Double pointer to the head of the stack.
- * @line_number: Line number where the pall opcode is encountered.
- * Return: no return
+ * f_pall - Prints all the values on the stack.
+ * @head: Double pointer to the head of the stack.
+ * @line_number: Line number in the file.
  */
-int pall(stack_t **stack)
+void f_pall(stack_t **head, unsigned int line_number)
 {
-	stack_t *current;
+    stack_t *current = *head;
 
-	if (!stack || !*stack)
-		return (0);
+    (void)line_number;
 
-	current = *stack;
-
-	while (current)
-	{
-		printf("%d\n", current->n);
-		current = current->next;
-	}
-	return (1);
+    while (current != NULL)
+    {
+        printf("%d\n", current->n);
+        current = current->next;
+    }
 }
