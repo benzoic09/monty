@@ -27,7 +27,7 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 
 	else if (strcmp(opcode, "pop") == 0)
 	{
-		if (!pop(stack, line_number))
+		if (!f_pop(stack))
 		{
 			fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 			return (0);

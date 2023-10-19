@@ -6,16 +6,17 @@
  * @head: Double pointer to the head of the stack.
  * @line_number: Line number in the file.
  */
-void f_pall(stack_t **head, unsigned int line_number)
+void pall(stack_t **stack)
 {
-    stack_t *current = *head;
+	stack_t *current = *stack;
 
-    (void)line_number;
+	if (!stack || !*stack)
+		return;
 
-    while (current != NULL)
-    {
-        printf("%d\n", current->n);
-        current = current->next;
-    }
+
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
 }
-
