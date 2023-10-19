@@ -23,6 +23,7 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 
 		value = atoi(argument);
 		push(stack, value);
+		f_swap(stack, line_number);
 	}
 
 	else if (strcmp(opcode, "pop") == 0)
