@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	while (fgets(line, MAX_LEN, file) != NULL)
 	{
 		line_number++;
-		process_instruction(&stack, line, line_number);
+		process_instruction(&stack, line, line_number, file);
 	}
 
 
