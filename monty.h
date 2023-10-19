@@ -1,7 +1,7 @@
 #ifndef __MONTY_H
 #define __MONTY_H
 
-
+#define  MAX_LEN 1024
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
