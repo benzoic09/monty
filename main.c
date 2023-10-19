@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
 		process_instruction(&stack, line, line_number);
 	}
 
+
 	fclose(file);
 	free_stack(stack);
 

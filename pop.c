@@ -4,20 +4,22 @@
  * pop - Removes the top element from the stack.
  * @stack: Double pointer to the head of the stack.
  * @line_number: Line number where the pop opcode is encountered.
- * Return: 0
  */
-int pop(stack_t **stack, unsigned int line_number)
+int pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (!stack || !*stack)
+	if (*head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-		return (0);;
+		exit(EXIT_FAILURE);
 	}
 
-	temp = *stack;
-	*stack = (*stack)->next;
-	free(temp);
-	return (1);
+	if ((*head)->next)
+	{
+		temp = *head;
+		*head = (*head)->next;
+		 (*head)->prev = NULL;
+		 free(temp);
+	}
 }
