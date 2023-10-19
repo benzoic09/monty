@@ -39,10 +39,6 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 		pall(stack);
 	}
 	
-	else if (strcmp(opcode, "swap") == 0)
-	{
-		f_swap(stack, line_number);
-	}
 
 	else
 	{
