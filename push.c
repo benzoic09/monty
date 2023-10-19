@@ -7,7 +7,7 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	int value = 0;
+	int value;
 	stack_t *new_node;
 	char *value_str = strtok(NULL, " \n\t");
 
@@ -17,11 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (sscanf(value_str, "%d", &value) != 1)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
+	value = atoi(value_str);
 
 	new_node = malloc(sizeof(stack_t));
 
