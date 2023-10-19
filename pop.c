@@ -1,23 +1,28 @@
-#include "monty.h"
-
 /**
- * pop - Removes the top element from the stack.
- * @stack: Double pointer to the head of the stack.
- * @line_number: Line number where the pop opcode is encountered.
- * Return: 0
+ * f_pop - Removes the top element of the stack.
+ * @head: Double pointer to the head of the stack.
+ * @line_number: Line number in the file.
  */
-int pop(stack_t **stack, unsigned int line_number)
+void f_pop(stack_t **head, unsigned int line_number)
 {
-	stack_t *temp;
+    stack_t *temp;
 
-	if (!stack || !*stack)
-	{
-		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-		return (0);;
-	}
+    if (*head == NULL)
+    {
+        fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+        exit(EXIT_FAILURE);
+    }
 
-	temp = *stack;
-	*stack = (*stack)->next;
-	free(temp);
-	return (1);
+    if ((*head)->next)
+    {
+        temp = *head;
+        *head = (*head)->next;
+        (*head)->prev = NULL;
+        free(temp);
+    }
+    else
+    {
+        free(*head);
+        *head = NULL;
+    }
 }
