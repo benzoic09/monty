@@ -9,19 +9,20 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	int value = 0;
 	stack_t *new_node;
-	char input[50];
+	char *value_str = strtok(NULL, " \n\t");
 
-	if (!stack)
+	if (!value_str)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	if (sscanf(input, "%d", &value) != 1)
+	if (sscanf(value_str, "%d", &value) != 1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+
 	new_node = malloc(sizeof(stack_t));
 
 	if (!new_node)
