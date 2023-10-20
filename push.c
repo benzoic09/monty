@@ -43,3 +43,21 @@ void push(stack_t **stack, unsigned int line_number)
 
 	*stack = new_node;
 }
+
+int is_number(char *str)
+{
+    if (!str)
+        return 0;
+
+    if (*str == '-')
+        str++;
+
+    while (*str)
+    {
+        if (!isdigit(*str))
+            return 0;
+        str++;
+    }
+
+    return 1;
+}

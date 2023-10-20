@@ -49,5 +49,5 @@ int main(int argc, char *argv[]);
 int process_instruction(stack_t **stack, char *instruction, unsigned int line_number);
 void free_stack(stack_t *stack);
 void add(stack_t **head, unsigned int line_number);
-
+int is_number(char *str);
 #endif
