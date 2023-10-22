@@ -13,14 +13,12 @@ int main(int argc, char *argv[])
 	FILE *file;
 	unsigned int line_number = 0;
 
-	/* Checking the number of arguments */
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
-	/* Opening the file */
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
@@ -28,20 +26,15 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	/* Processing instructions from the file */
 	while (fgets(line, sizeof(line), file))
 	{
 		line_number++;
-
-		/* Removing trailing newline */
 		if (line[strlen(line) - 1] == '\n')
 			line[strlen(line) - 1] = '\0';
 
-		/* Skipping empty lines or lines starting with spaces */
 		if (strcmp(line, "") == 0 || line[0] == ' ')
 			continue;
 
-		/* Handling given instructions */
 		if (!process_instruction(&stack, line, line_number))
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
@@ -51,9 +44,8 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	/* Closing the file and freeing memory */
 	fclose(file);
 	free_stack(stack);
 
-	return EXIT_SUCCESS;
+	return (EXIT_SUCCESS);
 }
