@@ -38,7 +38,7 @@ int process_instruction(stack_t **stack, char *instruction, unsigned int line_nu
 	}
 	else if (strcmp(opcode, "pall") == 0)
 	{
-		pall(stack);
+		pall(stack,line_number);
 	}
 	else
 	{
