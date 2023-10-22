@@ -50,4 +50,6 @@ int process_instruction(stack_t **stack, char *instruct, unsigned int line_num);
 void free_stack(stack_t *stack);
 void add(stack_t **head, unsigned int line_number);
 int is_number(char *str);
+void nop(stack_t **stack, unsigned int line_number);
+
 #endif
