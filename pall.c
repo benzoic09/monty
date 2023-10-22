@@ -1,15 +1,17 @@
 #include "monty.h"
 
 /**
- * f_pall - Prints all the values on the stack.
- * @head: Double pointer to the head of the stack.
+ * pall - Prints all the values on the stack.
+ * @stack: Double pointer to the head of the stack.
  * @line_number: Line number in the file.
  */
-void pall(stack_t **stack,unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
 
-	if (line_number) {}
+	if (line_number)
+	{
+	}
 
 	if (!stack || !*stack)
 		return;
